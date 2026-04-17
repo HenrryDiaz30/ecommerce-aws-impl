@@ -23,11 +23,11 @@ jobs:
       - name: Login to Amazon ECR
         uses: aws-actions/amazon-ecr-login@v2
 
-      - name: Build, tag, and push image to ECR
-        run: |
-          docker build -t ecommerce-app .
-          docker tag ecommerce-app:latest 708750713835.dkr.ecr.us-east-2.amazonaws.com/ecommerce-app:latest
-          docker push 708750713835.dkr.ecr.us-east-2.amazonaws.com/ecommerce-app:latest
+ - name: Build, tag, and push image to ECR
+  run: |
+    docker build -t ecommerce-app .
+    docker tag ecommerce-app:latest 708750713835.dkr.ecr.us-east-2.amazonaws.com/ecommerce-app:latest
+    docker push 708750713835.dkr.ecr.us-east-2.amazonaws.com/ecommerce-app:latest
 
       - name: Force new ECS deployment
         run: |
